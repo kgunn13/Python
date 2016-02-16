@@ -1,0 +1,10 @@
+from twilio.rest import TwilioRestClient
+
+account_sid = "AC7a0c83cdefc33784f2a24832f3190f83"
+auth_token  = "8526c94aa4ecefabe9ba235dd312d162"
+client = TwilioRestClient(account_sid, auth_token)
+ 
+message = client.messages.create(body="Hello! This is a Test!",
+    to="+14074298057",   
+    from_="+14079076255") 
+print message.sid
